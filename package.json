@@ -9,7 +9,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "postinstall": "tsc"
+    "postinstall": "npm run build"
   },
   "dependencies": {
     "@emotion/styled": "^11.14.0",
