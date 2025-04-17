@@ -2,9 +2,9 @@
 import { AppBar, Toolbar, Button, Box } from "@mui/material";
 import { Link } from "react-router-dom";
 import "./styles.css";
+import logo from "../../../assets/logo.png"
 
-// Assuming your logo is at this path
-const LOGO = "src/assets/logo.png";
+const LOGO = logo;
 
 export const Header: React.FC = () => {
   return (
@@ -15,7 +15,7 @@ export const Header: React.FC = () => {
         elevation={1}
         sx={{
           minWidth: "100%",
-          height: "var(--header-height)", // Use CSS variable
+          height: "var(--header-height)",
         }}
       >
         <Toolbar
