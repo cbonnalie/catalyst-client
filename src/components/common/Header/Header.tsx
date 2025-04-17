@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "./styles.css";
 
 // Assuming your logo is at this path
-const LOGO = "./src/assets/logo.png";
+const LOGO = "src/assets/logo.png";
 
 export const Header: React.FC = () => {
   return (
