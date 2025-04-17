@@ -9,7 +9,7 @@
 
 export async function fetchEvents(x: number): Promise<Event[]> {
   try {
-    const response = await fetch(`http://localhost:3000/api/xEvents?x=${x}`);
+    const response = await fetch(`${process.env.BACKEND_URL}/api/xEvents?x=${x}`);
 
     if (!response.ok) {
       const errorText = await response.text();
