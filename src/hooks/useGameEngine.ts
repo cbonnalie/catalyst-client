@@ -69,7 +69,7 @@ export const useGameEngine = (
     try {
       // Fetch the specified number of events
       const fetchedEvents = await fetchEvents(rounds);
-
+      console.log(fetchedEvents);
       if (fetchedEvents.length === 0) {
         setError("No events were returned from the server");
       } else {
