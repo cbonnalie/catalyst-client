@@ -9,7 +9,8 @@
 
 export async function fetchEvents(x: number): Promise<Event[]> {
   try {
-    const url = `${import.meta.env.VITE_SERVER_URL}/api/xEvents?x=${x}`;
+    const prefix = import.meta.env.VITE_SERVER_URL || process.env.LOCAL_URL;
+    const url = `${prefix}/api/xEvents?x=${x}`;
     console.log(`Fetching events from ${url}`);
     const response = await fetch(url);
 
