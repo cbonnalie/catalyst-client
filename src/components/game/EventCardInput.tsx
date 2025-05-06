@@ -245,7 +245,7 @@ const IntervalOptions: React.FC<IntervalOptionsProps> = (
         "1 year",
         "5 years",
     ];
-    const mobileIntervals: string[] = [
+    const mobileDisplayLabels: string[] = [
         "3",
         "6",
         "12",
@@ -273,7 +273,7 @@ const IntervalOptions: React.FC<IntervalOptionsProps> = (
             >
                 {isMobile
                     ?
-                    mobileIntervals.map((interval) => (
+                    intervals.map((interval, index) => (
                         <FormControlLabel
                             key={interval}
                             value={interval}
@@ -288,7 +288,7 @@ const IntervalOptions: React.FC<IntervalOptionsProps> = (
                                     }}
                                 />
                             }
-                            label={<Typography variant="body2">{interval}</Typography>}
+                            label={<Typography variant="body2">{mobileDisplayLabels[index]}</Typography>}
                             sx={{
                                 border: "1px solid #e0e0e0",
                                 borderRadius: 1,
