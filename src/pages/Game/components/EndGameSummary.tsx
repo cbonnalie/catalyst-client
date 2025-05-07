@@ -68,7 +68,11 @@ const EndGameSummary: React.FC<EndGameSummaryProps> = (props) => {
         isMobile
             ?
             (
-                <Container maxWidth={"sm"} sx={{height: "calc(100vh - var(--header-height))"}}>
+                <Container maxWidth={"sm"}
+                           sx={{
+                               height: "calc(90% - var(--header-height))",
+                               maxHeight: "90%",
+                           }}>
                     <Grid
                         container
                         spacing={2}
