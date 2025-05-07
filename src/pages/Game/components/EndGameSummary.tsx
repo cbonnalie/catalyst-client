@@ -67,8 +67,6 @@ const EndGameSummary: React.FC<EndGameSummaryProps> = (props) => {
                 <Container maxWidth={"sm"}
                            sx={{
                                py: "2rem",
-                               height: "calc(90% - var(--header-height))",
-                               maxHeight: "90%",
                            }}>
                     <Grid
                         container
