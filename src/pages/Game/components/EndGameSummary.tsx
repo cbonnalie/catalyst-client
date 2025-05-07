@@ -141,7 +141,7 @@ const EndGameSummary: React.FC<EndGameSummaryProps> = (props) => {
                             </Typography>
                             <Paper sx={{height: "100%", minHeight: 300}}>
                                 <Box
-                                    sx={{height: 300}}
+                                    sx={{height: 300, p: 0, m: 0}}
                                 >
                                     {renderLineChart(balanceHistory)}
                                 </Box>
