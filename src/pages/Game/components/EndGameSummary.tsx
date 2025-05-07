@@ -13,10 +13,6 @@ import {renderLineChart} from "../../../components/game/LineChart";
 import {InvestmentCards} from "../../../components/game/InvestmentCards";
 import {useGame} from "../../../contexts/GameContext";
 
-/**
- * This component can accept props for backward compatibility,
- * but also demonstrates how to use the context directly
- */
 interface EndGameSummaryProps {
     balance?: number;
     balanceHistory?: InvestmentHistory[];
@@ -70,6 +66,7 @@ const EndGameSummary: React.FC<EndGameSummaryProps> = (props) => {
             (
                 <Container maxWidth={"sm"}
                            sx={{
+                               py: "2rem",
                                height: "calc(90% - var(--header-height))",
                                maxHeight: "90%",
                            }}>
@@ -94,9 +91,6 @@ const EndGameSummary: React.FC<EndGameSummaryProps> = (props) => {
                                     overflow: "hidden",
                                 }}
                             >
-                                <Typography variant="h6" gutterBottom>
-                                    Results
-                                </Typography>
                                 <Box sx={{mt: 2}}>
                                     <Typography
                                         variant="subtitle1"
