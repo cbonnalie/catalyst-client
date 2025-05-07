@@ -120,13 +120,13 @@ const EndGameSummary: React.FC<EndGameSummaryProps> = (props) => {
                         </Grid>
 
                         {/* Investment Cards */}
-                        <Grid size={12} sx={{height: "50%", maxHeight: "50%"}}>
+                        <Grid size={12} sx={{height: "30%", maxHeight: "30%"}}>
                             <Paper
                                 sx={{
                                     p: 2,
                                     mb: 2,
                                     height: "100%",
-                                    overflow: "auto",
+                                    overflow: "hidden",
                                 }}
                             >
                                 <InvestmentCards
