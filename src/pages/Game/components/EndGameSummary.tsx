@@ -1,4 +1,4 @@
-﻿import React, {useEffect} from "react";
+﻿import React, {useEffect, useRef, useState} from "react";
 import {Investment, InvestmentHistory} from "../../../types/types";
 import {formatCurrency} from "../../../utils/investmentUtils";
 import {
@@ -30,6 +30,8 @@ const EndGameSummary: React.FC<EndGameSummaryProps> = (props) => {
     const gameContext = useGame();
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+    const [chartReady, setChartReady] = useState(false);
+    const chartContainerRef = useRef(null);
 
     // Use props if provided, otherwise fall back to context values
     const balance = props.balance ?? gameContext.userBalance;
@@ -47,6 +49,33 @@ const EndGameSummary: React.FC<EndGameSummaryProps> = (props) => {
             finalizeGame();
         }
     }, [finalizedGame, finalizeGame]);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setChartReady(true);
+        }, 100);
+
+        return () => clearTimeout(timer);
+    }, [isMobile]);
+
+    // Force a re-render of the chart if the container size changes
+    useEffect(() => {
+        if (!chartContainerRef.current) return;
+
+        const resizeObserver = new ResizeObserver(() => {
+            // Force re-render when size changes
+            setChartReady(false);
+            setTimeout(() => setChartReady(true), 10);
+        });
+
+        resizeObserver.observe(chartContainerRef.current);
+
+        return () => {
+            if (chartContainerRef.current) {
+                resizeObserver.unobserve(chartContainerRef.current);
+            }
+        };
+    }, [chartContainerRef.current]);
 
     // Calculate some statistics
     const totalInvestments = completedInvestments.length + liveInvestments.length;
@@ -135,12 +164,17 @@ const EndGameSummary: React.FC<EndGameSummaryProps> = (props) => {
                         </Grid>
 
                         {/* Balance History */}
-                        <Grid size={12} sx={{height: "40%"}}>
+                        <Grid size={12} sx={{height: "40%", minHeight: "300px"}}>
                             <Paper sx={{p: 2, height: "100%"}}>
                                 <Typography variant="h6" gutterBottom>
                                     Balance History
                                 </Typography>
-                                <Box sx={{height: "100%"}}>{renderLineChart(balanceHistory)}</Box>
+                                <Box
+                                    sx={{height: "100%"}}
+                                    ref={chartContainerRef}
+                                >
+                                    {chartReady && renderLineChart(balanceHistory)}
+                                </Box>
                             </Paper>
                         </Grid>
 
