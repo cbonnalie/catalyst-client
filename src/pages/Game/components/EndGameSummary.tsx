@@ -1,4 +1,4 @@
-﻿import React, {useEffect, useRef, useState} from "react";
+﻿import React, {useEffect} from "react";
 import {Investment, InvestmentHistory} from "../../../types/types";
 import {formatCurrency} from "../../../utils/investmentUtils";
 import {
@@ -9,9 +9,9 @@ import {
     Grid,
     Box, useTheme, useMediaQuery,
 } from "@mui/material";
-import {renderLineChart} from "../../../components/game/LineChart";
 import {InvestmentCards} from "../../../components/game/InvestmentCards";
 import {useGame} from "../../../contexts/GameContext";
+import {renderLineChart} from "../../../components/game/RenderLineChart.tsx";
 
 interface EndGameSummaryProps {
     balance?: number;
@@ -30,8 +30,6 @@ const EndGameSummary: React.FC<EndGameSummaryProps> = (props) => {
     const gameContext = useGame();
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-    const [chartReady, setChartReady] = useState(false);
-    const chartContainerRef = useRef(null);
 
     // Use props if provided, otherwise fall back to context values
     const balance = props.balance ?? gameContext.userBalance;
@@ -49,33 +47,6 @@ const EndGameSummary: React.FC<EndGameSummaryProps> = (props) => {
             finalizeGame();
         }
     }, [finalizedGame, finalizeGame]);
-
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setChartReady(true);
-        }, 100);
-
-        return () => clearTimeout(timer);
-    }, [isMobile]);
-
-    // Force a re-render of the chart if the container size changes
-    useEffect(() => {
-        if (!chartContainerRef.current) return;
-
-        const resizeObserver = new ResizeObserver(() => {
-            // Force re-render when size changes
-            setChartReady(false);
-            setTimeout(() => setChartReady(true), 10);
-        });
-
-        resizeObserver.observe(chartContainerRef.current);
-
-        return () => {
-            if (chartContainerRef.current) {
-                resizeObserver.unobserve(chartContainerRef.current);
-            }
-        };
-    }, [chartContainerRef.current]);
 
     // Calculate some statistics
     const totalInvestments = completedInvestments.length + liveInvestments.length;
@@ -171,9 +142,8 @@ const EndGameSummary: React.FC<EndGameSummaryProps> = (props) => {
                                 </Typography>
                                 <Box
                                     sx={{height: "100%"}}
-                                    ref={chartContainerRef}
                                 >
-                                    {chartReady && renderLineChart(balanceHistory)}
+                                    {renderLineChart(balanceHistory)}
                                 </Box>
                             </Paper>
                         </Grid>

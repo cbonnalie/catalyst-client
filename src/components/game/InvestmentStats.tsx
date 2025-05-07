@@ -1,8 +1,8 @@
 ﻿import React from "react";
 import {Grid, Paper, Box} from "@mui/material";
-import {renderLineChart} from "./LineChart.tsx";
 import {InvestmentCards} from "./InvestmentCards.tsx";
 import {Investment, InvestmentHistory} from "../../types/types.ts";
+import {renderLineChart} from "./RenderLineChart.tsx";
 
 interface InvestmentStatsProps {
     balanceHistory: InvestmentHistory[];

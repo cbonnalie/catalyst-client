@@ -1,16 +1,7 @@
 ﻿import React from "react";
-import {
-  AreaChart,
-  Area,
-  XAxis,
-  YAxis,
-  Tooltip,
-  ResponsiveContainer,
-  ReferenceLine,
-  TooltipProps,
-} from "recharts";
-import { InvestmentHistory, GAME_CONSTANTS } from "../../types/types";
-import { formatCurrency } from "../../utils/investmentUtils";
+import {Area, AreaChart, ReferenceLine, ResponsiveContainer, Tooltip, TooltipProps, XAxis, YAxis,} from "recharts";
+import {GAME_CONSTANTS, InvestmentHistory} from "../../types/types";
+import {formatCurrency} from "../../utils/investmentUtils";
 
 interface CustomTooltipProps extends TooltipProps<any, any> {
   active?: boolean;
@@ -122,9 +113,3 @@ export const LineChart: React.FC<LineChartProps> = ({ data }) => {
   );
 };
 
-/**
- * Helper function to render the line chart (for backward compatibility)
- */
-export const renderLineChart = (data: InvestmentHistory[]) => {
-  return <LineChart data={data} />;
-};
