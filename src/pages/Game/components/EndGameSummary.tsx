@@ -137,7 +137,7 @@ const EndGameSummary: React.FC<EndGameSummaryProps> = (props) => {
                         </Grid>
 
                         {/* Balance History */}
-                        <Grid size={12} sx={{height: "40%", maxHeight: "40%"}}>
+                        <Grid size={12} sx={{height: "40%", maxHeight: "40%", minHeight: "40%"}}>
                             <Paper sx={{p: 2, height: "100%"}}>
                                 <Typography variant="h6" gutterBottom>
                                     Balance History
@@ -170,7 +170,6 @@ const EndGameSummary: React.FC<EndGameSummaryProps> = (props) => {
                                 sx={{
                                     p: 3,
                                     mb: 2,
-                                    bgcolor: "#f5f5f5",
                                     height: "100%",
                                     overflow: "hidden",
                                 }}
@@ -205,7 +204,6 @@ const EndGameSummary: React.FC<EndGameSummaryProps> = (props) => {
                                 sx={{
                                     p: 3,
                                     mb: 2,
-                                    bgcolor: "#f5f5f5",
                                     height: "100%",
                                     overflow: "auto",
                                 }}
