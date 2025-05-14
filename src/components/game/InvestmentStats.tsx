@@ -64,7 +64,7 @@ export const InvestmentStats: React.FC<InvestmentStatsProps> = (
                     {/* Balance Chart Column */}
                     <Grid size={4} sx={{height: "100%", minHeight: "40vh"}}>
                         <Box sx={{display: "flex", flexDirection: "column", height: "100%"}}>
-                            <Box sx={{flex: 1, height: "calc(100% - 30px)"}}>
+                            <Box sx={{flex: 1, height: "100%"}}>
                                 {renderLineChart(balanceHistory)}
                             </Box>
                         </Box>
