@@ -74,7 +74,7 @@ export const LineChart: React.FC<LineChartProps> = ({data}) => {
             <AreaChart
                 data={data}
                 margin={{
-                    top: -50,
+                    top: 0,
                     right: 0,
                     left: 0,
                     bottom: 0,
