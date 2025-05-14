@@ -64,8 +64,7 @@ interface LineChartProps {
  * Renders a line chart showing investment balance over time
  */
 export const LineChart: React.FC<LineChartProps> = ({data}) => {
-    const minBalance =
-        data.length > 0 ? Math.min(...data.map((item) => item.balance)) : 0;
+    //const minBalance = data.length > 0 ? Math.min(...data.map((item) => item.balance)) : 0;
 
     const threshold = GAME_CONSTANTS.BALANCE_THRESHOLD;
     const gradientOffset = calculateGradientOffset(data, threshold);
