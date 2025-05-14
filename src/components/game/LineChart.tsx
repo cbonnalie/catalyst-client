@@ -64,7 +64,7 @@ interface LineChartProps {
  * Renders a line chart showing investment balance over time
  */
 export const LineChart: React.FC<LineChartProps> = ({data}) => {
-    //const minBalance = data.length > 0 ? Math.min(...data.map((item) => item.balance)) : 0;
+    const minBalance = data.length > 0 ? Math.min(...data.map((item) => item.balance)) : 0;
 
     const threshold = GAME_CONSTANTS.BALANCE_THRESHOLD;
     const gradientOffset = calculateGradientOffset(data, threshold);
@@ -85,11 +85,10 @@ export const LineChart: React.FC<LineChartProps> = ({data}) => {
             >
                 <XAxis dataKey="turn" tick={false} axisLine={false}/>
                 <YAxis
-                    // domain={[
-                    //   Math.min(minBalance * 0.9, threshold * 0.9),
-                    //   Math.max(threshold * 1.1, minBalance * 1.1),
-                    // ]}
-                    domain={['dataMin', 'dataMax']} hide
+                    domain={[
+                      Math.min(minBalance * 0.9, threshold * 0.9),
+                      Math.max(threshold * 1.1, minBalance * 1.1),
+                    ]}
                     tickFormatter={(value) => value.toFixed(0)}
                     //axisLine={false}
                     //tick={false}
