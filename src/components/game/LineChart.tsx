@@ -81,7 +81,7 @@ export const LineChart: React.FC<LineChartProps> = ({data}) => {
                 }}
                 style={{
                     maxHeight: "100%",
-                    padding: "20px 0",
+                    padding: "0 0 20px 0",
                 }}
             >
                 <XAxis dataKey="turn" tick={false} axisLine={false}/>
