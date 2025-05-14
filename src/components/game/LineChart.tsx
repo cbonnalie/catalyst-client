@@ -71,7 +71,7 @@ export const LineChart: React.FC<LineChartProps> = ({ data }) => {
   const gradientOffset = calculateGradientOffset(data, threshold);
 
   return (
-    <>
+    <ResponsiveContainer width="100%" height="100%">
       <AreaChart
         data={data}
         margin={{
@@ -79,6 +79,9 @@ export const LineChart: React.FC<LineChartProps> = ({ data }) => {
           right: 0,
           left: 0,
           bottom: 0,
+        }}
+        style={{
+            maxHeight: "100%",
         }}
       >
         <XAxis dataKey="turn" tick={false} axisLine={false} />
@@ -110,7 +113,7 @@ export const LineChart: React.FC<LineChartProps> = ({ data }) => {
           baseValue={threshold}
         />
       </AreaChart>
-    </>
+    </ResponsiveContainer width="100%" height="100%">
   );
 };
 
