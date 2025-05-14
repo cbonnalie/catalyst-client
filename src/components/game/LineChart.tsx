@@ -74,14 +74,10 @@ export const LineChart: React.FC<LineChartProps> = ({data}) => {
             <AreaChart
                 data={data}
                 margin={{
-                    top: 0,
+                    top: -20,
                     right: 0,
                     left: 0,
                     bottom: 0,
-                }}
-                style={{
-                    maxHeight: "100%",
-                    padding: "0 0 20px 0",
                 }}
             >
                 <XAxis dataKey="turn" tick={false} axisLine={false}/>
