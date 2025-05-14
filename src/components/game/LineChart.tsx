@@ -78,7 +78,7 @@ export const LineChart: React.FC<LineChartProps> = ({ data }) => {
           top: 0,
           right: 0,
           left: 0,
-          bottom: 0,
+          bottom: 10,
         }}
         style={{
             maxHeight: "100%",
