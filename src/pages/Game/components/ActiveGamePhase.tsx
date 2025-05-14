@@ -49,13 +49,13 @@ export const ActiveGamePhase: React.FC = () => {
         >
             <Box
                 sx={{
-                    height: "100%", // Accounting for header height
+                    height: "100%",
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "space-between",
                 }}
             >
-                {/* Status Footer */}
+                {/* Status */}
                 <Box sx={{height: "10%", p: "5px"}}>
                     <Status
                         userBalance={userBalance}
@@ -86,7 +86,7 @@ export const ActiveGamePhase: React.FC = () => {
                     </Paper>
                 </Box>
 
-                <Box sx={{flex: 1, height: "30%", p: "5px", overflow: "hidden"}}>
+                <Box sx={{flex: 1, height: "30%", maxHeight: "30%", p: "5px", overflow: "hidden"}}>
                     <Paper sx={{p: 1, height: "100%"}}>
                         <InvestmentStats
                             balanceHistory={balanceHistory}
