@@ -86,7 +86,7 @@ export const ActiveGamePhase: React.FC = () => {
                     </Paper>
                 </Box>
 
-                <Box sx={{flex: 1, height: "30%", maxHeight: "30%", overflow: "hidden"}}>
+                <Box sx={{flex: 1, height: "30%", p: "5px", overflow: "hidden"}}>
                     <Paper sx={{p: 1, height: "100%"}}>
                         <InvestmentStats
                             balanceHistory={balanceHistory}
