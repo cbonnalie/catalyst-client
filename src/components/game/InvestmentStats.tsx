@@ -24,7 +24,7 @@ export const InvestmentStats: React.FC<InvestmentStatsProps> = (
                 <Grid container spacing={1} sx={{height: "100%", padding: "20px 0"}}>
                     <Grid size={12} sx={{height: "100%", minHeight: "40vh"}}>
                         <Box sx={{display: "flex", flexDirection: "column", height: "100%"}}>
-                            <Box sx={{flex: 1, height: "100%", maxHeight: "100%"}}>
+                            <Box sx={{height: "100%", maxHeight: "100%"}}>
                                 {renderLineChart(balanceHistory)}
                             </Box>
                         </Box>
