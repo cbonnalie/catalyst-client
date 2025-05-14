@@ -113,7 +113,7 @@ export const LineChart: React.FC<LineChartProps> = ({ data }) => {
           baseValue={threshold}
         />
       </AreaChart>
-    </ResponsiveContainer width="100%" height="100%">
+    </ResponsiveContainer>
   );
 };
 
