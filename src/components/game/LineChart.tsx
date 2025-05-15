@@ -73,8 +73,13 @@ export const LineChart: React.FC<LineChartProps> = ({data}) => {
         <ResponsiveContainer width="100%" height="100%">
             <AreaChart
                 data={data}
+                margin={{
+                    top: 0,
+                    right: 0,
+                    left: 0,
+                    bottom: 0,
+                }}
                 style={{
-                    margin: "0 auto",
                     outline: "1px solid blue",
                 }}
             >
