@@ -70,7 +70,7 @@ export const LineChart: React.FC<LineChartProps> = ({data}) => {
     const gradientOffset = calculateGradientOffset(data, threshold);
 
     return (
-        <ResponsiveContainer width="100%" height="100%">
+        <ResponsiveContainer width="100%" height="100%" style={{margin: "0 auto"}}>
             <AreaChart
                 data={data}
                 margin={{
