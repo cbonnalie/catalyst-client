@@ -92,7 +92,7 @@ export const LineChart: React.FC<LineChartProps> = ({data}) => {
                     //tickFormatter={(value) => value.toFixed(0)}
                     axisLine={false}
                     tick={false}
-                    //width={40} // remove this and everything breaks. idk why.
+                    width={20} // remove this and everything breaks. idk why.
                 />
                 <Tooltip content={<CustomTooltip/>}/>
                 <ReferenceLine y={threshold} stroke="gray" strokeDasharray="3 3"/>
