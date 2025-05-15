@@ -89,9 +89,9 @@ export const LineChart: React.FC<LineChartProps> = ({data}) => {
                       Math.min(minBalance * 0.9, threshold * 0.9),
                       Math.max(threshold * 1.1, minBalance * 1.1),
                     ]}
-                    tickFormatter={(value) => value.toFixed(0)}
-                    //axisLine={false}
-                    //tick={false}
+                    //tickFormatter={(value) => value.toFixed(0)}
+                    axisLine={false}
+                    tick={false}
                     //width={40} // remove this and everything breaks. idk why.
                 />
                 <Tooltip content={<CustomTooltip/>}/>
