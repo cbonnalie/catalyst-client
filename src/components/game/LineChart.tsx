@@ -79,9 +79,6 @@ export const LineChart: React.FC<LineChartProps> = ({data}) => {
                     left: 0,
                     bottom: 0,
                 }}
-                style={{
-                    outline: "1px solid blue",
-                }}
             >
                 <XAxis dataKey="turn" tick={false} axisLine={false} height={0}/>
                 <YAxis
