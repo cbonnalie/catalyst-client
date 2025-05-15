@@ -375,13 +375,12 @@ const InvestmentTypeOptions: React.FC<InvestmentTypeOptionsProps> = (
                 }}
             >
                 {isMobile
-                ?
-                types.map((type) => (
-                    <FormControlLabel
-                        key={type}
-                        value={type}
-                        control={
-                            isMobile ? (
+                    ?
+                    types.map((type) => (
+                        <FormControlLabel
+                            key={type}
+                            value={type}
+                            control={
                                 <Radio
                                     size="small"
                                     sx={{
@@ -389,60 +388,58 @@ const InvestmentTypeOptions: React.FC<InvestmentTypeOptionsProps> = (
                                         "& .MuiSvgIcon-root": {
                                             display: "none",
                                         },
-                                        display: "flex",
-                                        justifyContent: "center",
-                                        alignItems: "center",
                                     }}
                                 />
-                            ) : (
-                                <Radio size="small"/>
-                            )
-                        }
-                        label={<Typography variant="body2">{type}</Typography>}
-                        sx={{
-                            border: "1px solid #e0e0e0",
-                            borderRadius: 1,
-                            margin: 0,
-                            mb: isMobile ? 0.5 : 0,
-                            height: "36px",
-                            width: isMobile ? "30%" : "100%",
-                            "& .MuiFormControlLabel-label": {
-                                position: isMobile ? "static" : "absolute",
-                                left: isMobile ? "auto" : "36px",
-                                textAlign: isMobile ? "center" : "left"
-                            },
-                            ...(selectedType === type && {
-                                border: "1px solid #3f51b5",
-                                bgcolor: "rgba(63, 81, 181, 0.08)",
-                            }),
-                        }}
-                    />
-                ))
-                :
-                types.map((type) => (
-                    <FormControlLabel
-                        key={type}
-                        value={type}
-                        control={<Radio size="small"/>}
-                        label={<Typography variant="body2">{type}</Typography>}
-                        sx={{
-                            border: "1px solid #e0e0e0",
-                            borderRadius: 1,
-                            mb: 0.5,
-                            height: "36px",
-                            width: "100%",
-                            margin: 0,
-                            "& .MuiFormControlLabel-label": {
-                                position: "absolute",
-                                left: "36px",
-                            },
-                            ...(selectedType === type && {
-                                border: "1px solid #3f51b5",
-                                bgcolor: "rgba(63, 81, 181, 0.08)",
-                            }),
-                        }}
-                    />
-                ))
+
+                            }
+                            label={<Typography variant="body2">{type}</Typography>}
+                            sx={{
+                                border: "1px solid #e0e0e0",
+                                borderRadius: 1,
+                                height: "36px",
+                                width: "30%",
+                                margin: 0,
+                                padding: 0,
+                                display: "flex",
+                                justifyContent: "center",
+                                alignItems: "center",
+                                "& .MuiFormControlLabel-label": {
+                                    position: isMobile ? "static" : "absolute",
+                                    left: isMobile ? "auto" : "36px",
+                                    textAlign: isMobile ? "center" : "left"
+                                },
+                                ...(selectedType === type && {
+                                    border: "1px solid #3f51b5",
+                                    bgcolor: "rgba(63, 81, 181, 0.08)",
+                                }),
+                            }}
+                        />
+                    ))
+                    :
+                    types.map((type) => (
+                        <FormControlLabel
+                            key={type}
+                            value={type}
+                            control={<Radio size="small"/>}
+                            label={<Typography variant="body2">{type}</Typography>}
+                            sx={{
+                                border: "1px solid #e0e0e0",
+                                borderRadius: 1,
+                                mb: 0.5,
+                                height: "36px",
+                                width: "100%",
+                                margin: 0,
+                                "& .MuiFormControlLabel-label": {
+                                    position: "absolute",
+                                    left: "36px",
+                                },
+                                ...(selectedType === type && {
+                                    border: "1px solid #3f51b5",
+                                    bgcolor: "rgba(63, 81, 181, 0.08)",
+                                }),
+                            }}
+                        />
+                    ))
                 }
             </RadioGroup>
         </FormControl>
