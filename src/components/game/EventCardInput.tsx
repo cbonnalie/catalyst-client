@@ -323,9 +323,6 @@ const IntervalOptions: React.FC<IntervalOptionsProps> = (
                                 mb: 0.5,
                                 height: "36px",
                                 width: "100%",
-                                display: "flex",
-                                justifyContent: "center",
-                                alignItems: "center",
                                 margin: 0,
                                 "& .MuiFormControlLabel-label": {
                                     position: "absolute",
@@ -399,9 +396,6 @@ const InvestmentTypeOptions: React.FC<InvestmentTypeOptionsProps> = (
                             margin: 0,
                             mb: isMobile ? 0.5 : 0,
                             height: "36px",
-                            display: "flex",
-                            justifyContent: "center",
-                            alignItems: "center",
                             width: isMobile ? "30%" : "100%",
                             "& .MuiFormControlLabel-label": {
                                 position: isMobile ? "static" : "absolute",
