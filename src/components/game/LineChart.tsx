@@ -83,7 +83,7 @@ export const LineChart: React.FC<LineChartProps> = ({data}) => {
                     outline: "1px solid blue",
                 }}
             >
-                <XAxis dataKey="turn" tick={false} axisLine={false}/>
+                <XAxis dataKey="turn" tick={false} axisLine={false} height={0}/>
                 <YAxis
                     domain={[
                       Math.min(minBalance * 0.9, threshold * 0.9),
