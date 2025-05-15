@@ -383,9 +383,6 @@ const InvestmentTypeOptions: React.FC<InvestmentTypeOptionsProps> = (
                                         "& .MuiSvgIcon-root": {
                                             display: "none",
                                         },
-                                        display: "flex",
-                                        justifyContent: "center",
-                                        alignItems: "center",
                                     }}
                                 />
                             ) : (
@@ -400,6 +397,9 @@ const InvestmentTypeOptions: React.FC<InvestmentTypeOptionsProps> = (
                             mb: isMobile ? 0.5 : 0,
                             height: "36px",
                             width: isMobile ? "30%" : "100%",
+                            display: isMobile ? "flex" : "block",
+                            justifyContent: isMobile ? "center" : "flex-start",
+                            alignItems: isMobile ? "center" : "flex-start",
                             "& .MuiFormControlLabel-label": {
                                 position: isMobile ? "static" : "absolute",
                                 left: isMobile ? "auto" : "36px",
