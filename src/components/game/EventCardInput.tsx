@@ -382,7 +382,10 @@ const InvestmentTypeOptions: React.FC<InvestmentTypeOptionsProps> = (
                                         "&": {padding: 0, display: "none"},
                                         "& .MuiSvgIcon-root": {
                                             display: "none",
-                                        }
+                                        },
+                                        display: "flex",
+                                        justifyContent: "center",
+                                        alignItems: "center",
                                     }}
                                 />
                             ) : (
