@@ -323,6 +323,9 @@ const IntervalOptions: React.FC<IntervalOptionsProps> = (
                                 mb: 0.5,
                                 height: "36px",
                                 width: "100%",
+                                display: "flex",
+                                justifyContent: "center",
+                                alignItems: "center",
                                 margin: 0,
                                 "& .MuiFormControlLabel-label": {
                                     position: "absolute",
