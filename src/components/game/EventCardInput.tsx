@@ -1,18 +1,18 @@
 ﻿import React from "react";
-import {
-    Grid,
-    Typography,
-    Radio,
-    RadioGroup,
-    FormControlLabel,
-    FormControl,
-    TextField,
-    Button,
-    Divider,
-    Box,
-} from "@mui/material";
 import {Event, InvestmentType, TimeInterval} from "../../types/types.ts";
 import {isValidInvestment} from "../../utils/investmentUtils.ts";
+import {
+    Box,
+    Button,
+    Divider,
+    FormControl,
+    FormControlLabel,
+    Grid,
+    Radio,
+    RadioGroup,
+    TextField,
+    Typography,
+} from "@mui/material";
 
 /**
  * Props for the EventCardInput component
@@ -375,20 +375,20 @@ const InvestmentTypeOptions: React.FC<InvestmentTypeOptionsProps> = (
                         key={type}
                         value={type}
                         control={
-                        isMobile ? (
-                        <Radio
-                            size="small"
-                            sx={{
-                                "&": {padding: 0, display: "none"},
-                                "& .MuiSvgIcon-root": {
-                                    display: "none",
-                                }
-                            }}
-                        />
-                        ) : (
-                            <Radio size="small"/>
-                        )
-                    }
+                            isMobile ? (
+                                <Radio
+                                    size="small"
+                                    sx={{
+                                        "&": {padding: 0, display: "none"},
+                                        "& .MuiSvgIcon-root": {
+                                            display: "none",
+                                        }
+                                    }}
+                                />
+                            ) : (
+                                <Radio size="small"/>
+                            )
+                        }
                         label={<Typography variant="body2">{type}</Typography>}
                         sx={{
                             border: "1px solid #e0e0e0",
