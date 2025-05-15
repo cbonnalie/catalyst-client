@@ -357,7 +357,11 @@ const InvestmentTypeOptions: React.FC<InvestmentTypeOptionsProps> = (
     const types: InvestmentType[] = ["Invest", "Short", "Skip"];
 
     return (
-        <FormControl component="fieldset" fullWidth size="small">
+        <FormControl
+            component="fieldset"
+            fullWidth
+            size="small"
+        >
             <RadioGroup
                 name="option"
                 value={selectedType}
@@ -370,7 +374,9 @@ const InvestmentTypeOptions: React.FC<InvestmentTypeOptionsProps> = (
                     gap: isMobile ? 1 : 0.5,
                 }}
             >
-                {types.map((type) => (
+                {isMobile
+                ?
+                types.map((type) => (
                     <FormControlLabel
                         key={type}
                         value={type}
@@ -383,6 +389,9 @@ const InvestmentTypeOptions: React.FC<InvestmentTypeOptionsProps> = (
                                         "& .MuiSvgIcon-root": {
                                             display: "none",
                                         },
+                                        display: "flex",
+                                        justifyContent: "center",
+                                        alignItems: "center",
                                     }}
                                 />
                             ) : (
@@ -397,9 +406,6 @@ const InvestmentTypeOptions: React.FC<InvestmentTypeOptionsProps> = (
                             mb: isMobile ? 0.5 : 0,
                             height: "36px",
                             width: isMobile ? "30%" : "100%",
-                            display: isMobile ? "flex" : "block",
-                            justifyContent: isMobile ? "center" : "flex-start",
-                            alignItems: isMobile ? "center" : "flex-start",
                             "& .MuiFormControlLabel-label": {
                                 position: isMobile ? "static" : "absolute",
                                 left: isMobile ? "auto" : "36px",
@@ -411,7 +417,33 @@ const InvestmentTypeOptions: React.FC<InvestmentTypeOptionsProps> = (
                             }),
                         }}
                     />
-                ))}
+                ))
+                :
+                types.map((type) => (
+                    <FormControlLabel
+                        key={type}
+                        value={type}
+                        control={<Radio size="small"/>}
+                        label={<Typography variant="body2">{type}</Typography>}
+                        sx={{
+                            border: "1px solid #e0e0e0",
+                            borderRadius: 1,
+                            mb: 0.5,
+                            height: "36px",
+                            width: "100%",
+                            margin: 0,
+                            "& .MuiFormControlLabel-label": {
+                                position: "absolute",
+                                left: "36px",
+                            },
+                            ...(selectedType === type && {
+                                border: "1px solid #3f51b5",
+                                bgcolor: "rgba(63, 81, 181, 0.08)",
+                            }),
+                        }}
+                    />
+                ))
+                }
             </RadioGroup>
         </FormControl>
     );
